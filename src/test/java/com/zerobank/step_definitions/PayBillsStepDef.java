@@ -10,19 +10,18 @@ import java.util.Map;
 
 public class PayBillsStepDef {
 
-    PayBillsPage payBillsPage=new PayBillsPage();
-
+    PayBillsPage payBillsPage = new PayBillsPage();
 
 
     @Given("the user clicks {string} link")
     public void the_user_clicks_link(String linkText) {
-    payBillsPage.clickLinkFromWebElementList(linkText);
+        payBillsPage.clickLinkFromWebElementList(linkText);
 
     }
 
 
     @Given("creates new payee using following information")
-    public void creates_new_payee_using_following_information(Map<String,String> table) {
+    public void creates_new_payee_using_following_information(Map<String, String> table) {
 
         for (int i = 0; i < payBillsPage.labelsTabNewPayee.size(); i++) {
             String eachValue = table.get(payBillsPage.labelsTabNewPayee.get(i).getText());
@@ -34,17 +33,11 @@ public class PayBillsStepDef {
     }
 
 
-
-
     @Then("message {string} should be displayed")
     public void message_should_be_displayed(String expectedError) {
-        BrowserUtils.waitForVisibility(payBillsPage.alertContent,5);
-        Assert.assertEquals(expectedError,payBillsPage.alertContent.getText());
+        BrowserUtils.waitForVisibility(payBillsPage.alertContent, 5);
+        Assert.assertEquals(expectedError, payBillsPage.alertContent.getText());
     }
-
-
-
-
 
 
 }

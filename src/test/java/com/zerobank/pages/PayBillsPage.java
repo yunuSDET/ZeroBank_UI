@@ -8,8 +8,6 @@ import java.util.List;
 public class PayBillsPage extends BasePage {
 
 
-    @FindBy(css = "#tabs li")
-    public List<WebElement> tabLinks;
 
 
     @FindBy(css = "#ui-tabs-2 .control-group div *")
@@ -37,17 +35,10 @@ public class PayBillsPage extends BasePage {
     @FindBy(id = "pc_inDollars_true")
     public WebElement radioBtnDollar;
 
-    @FindBy(id = "pc_inDollars_false")
-    public WebElement radioBtnDollarFalse;
-
-
 
     @FindBy(id = "pc_calculate_costs")
     public WebElement btnCalculateCosts;
 
-
-    @FindBy(id = "purchase_cash")
-    public WebElement btnPurchase;
 
 
 

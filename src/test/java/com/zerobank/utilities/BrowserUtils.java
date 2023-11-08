@@ -17,11 +17,6 @@ import java.util.Set;
 
 public class BrowserUtils {
 
-    /*
-
-    this method will accept int (in seconds) and execute Thread.sleep
-
-    */
 
     public static void sleep(int second) {
         second *= 1000;
@@ -41,15 +36,7 @@ public class BrowserUtils {
 
     public static void switchWindowAndVerify(String expectedInUrl, String expectedInTitle) {
 
-        /*
 
-        This method accepts 3 arguments.
-        Arg1: webdriver
-        Arg2: expectedInUrl : for verify if the url contains given String.
-            - If condition matches, will break loop.
-        Arg3: expectedInTitle to be compared against actualTitle
-
-        */
 
         Set<String> allWindowsHandles = Driver.getDriver().getWindowHandles();
 
@@ -64,7 +51,7 @@ public class BrowserUtils {
             }
         }
 
-        //5. Assert:Title contains “expectedInTitle”
+
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
     }

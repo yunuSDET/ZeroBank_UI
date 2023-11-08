@@ -1,12 +1,12 @@
 package com.zerobank.pages;
 
-import io.cucumber.java.bs.A;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class AccountActivityPage extends BasePage{
+public class AccountActivityPage extends BasePage {
 
     @FindBy(id = "aa_accountId")
     public WebElement selectAccount;
@@ -48,11 +48,9 @@ public class AccountActivityPage extends BasePage{
     public WebElement btnFind;
 
 
-
     @FindBy(xpath = "//div[@id='filtered_transactions_for_account']//tr/td[1]")
     public List<WebElement> listedDates;
 
-    
 
     @FindBy(xpath = "//div[@id='filtered_transactions_for_account']//tr/td[2]")
     public List<WebElement> listedDescriptions;
@@ -65,11 +63,8 @@ public class AccountActivityPage extends BasePage{
     public List<WebElement> listedWithdraws;
 
 
-
     @FindBy(css = "#filtered_transactions_for_account div")
     public WebElement noResult;
-
-
 
 
 }

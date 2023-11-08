@@ -5,7 +5,6 @@ import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.Select;
@@ -14,12 +13,12 @@ import java.util.List;
 
 public class PurchaseForeignCurrencyStepDef {
 
-    PayBillsPage payBillsPage=new PayBillsPage();
+    PayBillsPage payBillsPage = new PayBillsPage();
     Select selectCurrency;
 
     @Then("following currencies should be available")
     public void following_currencies_should_be_available(List<String> dataTable) {
-        selectCurrency=new Select(payBillsPage.selectCurrency);
+        selectCurrency = new Select(payBillsPage.selectCurrency);
 
         List<String> currenciesList = BrowserUtils.getStringListFromWebElementList(selectCurrency.getOptions());
 
@@ -51,14 +50,13 @@ public class PurchaseForeignCurrencyStepDef {
 
     @When("user tries to calculate cost without entering a value")
     public void user_tries_to_calculate_cost_without_entering_a_value() {
-        selectCurrency=new Select(payBillsPage.selectCurrency);
-        Select selectCurrency=new Select(payBillsPage.selectCurrency);
+        selectCurrency = new Select(payBillsPage.selectCurrency);
+        Select selectCurrency = new Select(payBillsPage.selectCurrency);
         selectCurrency.selectByIndex(1);
         payBillsPage.radioBtnDollar.click();
         payBillsPage.btnCalculateCosts.click();
 
     }
-
 
 
 }
